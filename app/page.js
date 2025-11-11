@@ -1,0 +1,473 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+import MenuCard from "./Components/MenuCard";
+import Footer from "./Components/Footer";
+
+
+export default function Home() {
+  const mainImg ="https://restan-nextjs.vercel.app/assets/img/banner/14.jpg";
+  {/* Popular Category card */}
+  const pop1 = "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg";
+  const pop2 = "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg";
+  const pop3 = "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg";
+
+  {/* Special Offer card */}
+  const offerCard = "https://restan-nextjs.vercel.app/assets/img/shape/4.jpg";
+
+  {/* Restan card */}
+  const restan = "https://img.youtube.com/vi/F3zw1Gvn4Mk/maxresdefault.jpg";
+
+    {/* Chef card */}
+  const C1 = "https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F1.jpg&w=1920&q=75";
+  const C2 = "https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F2.jpg&w=1920&q=75";
+  const C3 = "https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F3.jpg&w=1920&q=75";
+
+  {/*NAV BAR LOGIC */}
+  const [navColor, setNavColor] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setNavColor(false);
+      } else {
+        setNavColor(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  {/*NAV BAR LOGIC END*/}
+
+  return (
+    <div className="w-full h-full bg-[#FFFFFF] text-black dark:bg-[#1B1B1B] dark:text-white">
+      {/* Above Nav Card */}
+      {!navColor &&
+        <div className="w-full h-10 fixed border-b-1 border-white/50 flex flex-row items-center px-20 justify-between text-white text-xl">
+          <div className="flex flex-row w-[30%] justify-around">
+            <h1>Phone:+91XXXXXXXXXX</h1>
+            <h1>Email:food@restan.com</h1>
+          </div>
+          <div>
+            <h1>175 10h Street, Office 375 Berlin, De 21562</h1>
+          </div>
+        </div>
+      }
+
+      {/* Nav Card */}
+      <div
+        className={`w-full h-auto flex flex-row justify-around items-center p-7 z-30 text-white fixed ${navColor ? "bg-[#383838] top-0 left-0 mt-0 " : "bg-transparent mt-10"}`}>
+        {/* Left Nav Card */}
+        <div className="w-1/5 h-auto flex flex-row text-xl font-bold gap-5 justify-evenly items-center">
+          <button>Home</button>
+          <button>Pages</button>
+          <button>Menu</button>
+        </div>
+        {/* Center Nav Card */}
+        <img
+        src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo-light.png&w=1920&q=75"
+        className="w-auto h-20"
+        >
+        </img>
+        {/* Right Nav Card */}
+        <div className="w-1/5 h-auto flex flex-row text-xl font-bold gap-5 justify-evenly items-center">
+          <button>Blog</button>
+          <button>Shop</button>
+          <button>Contact Us</button>
+        </div>
+      </div>
+
+      {/* Intro Card */}
+      <div className="w-full h-[100vh] bg-cover bg-center text-white" style={{backgroundImage: `url(${mainImg})`}}>
+        <div className="bg-black/50 w-full h-full flex flex-col items-center justify-center pt-30">
+          <h1 className="text-8xl font-bold font-serif">
+            Best Restaurant
+          </h1>
+          <div className="border-[#FFD8A3] border-2 w-40 h-40 rounded-full mt-7 flex justify-center items-center bg-[#FFD8A3]/40">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/14921/14921792.png"
+              className="w-auto h-18 ml-"
+            >
+            </img>
+          </div>
+        </div>
+      </div>
+
+      {/* Book a table Card // 2nd Crad */}
+      <div className="w-full h-fit flex flex-row pl-30">
+        {/* Book a table Card */}
+        <div className="w-[35%] h-fit shadow-xl rounded-4xl mt-[-50px] z-10 bg-[#FFFFFF] dark:bg-[#262525] p-15">
+
+          <img
+          src="https://cdn-icons-png.flaticon.com/128/857/857681.png"
+          className="w-auto h-20 -mt-27 bg-[#826A45] rounded-full p-1"
+          ></img>
+
+          <div className="flex flex-col gap-4">
+            <h1 className="font-serif text-3xl mt-8">Book a table</h1>
+            <input placeholder="Phone" className="border-1 border-black/20 dark:border-white/50 p-4 rounded-xl"></input>
+            <select className="border-1 border-black/20 dark:border-white/50 p-4 rounded-xl">
+              <option value="1 Person">1 Person</option>
+              <option value="2 Person">2 Person</option>
+              <option value="3 Person">3 Person</option>
+              <option value="4 Person">4 Person</option>
+            </select>
+            <input type="date" className="border-1 border-black/20 dark:border-white/50 p-4 rounded-xl" />
+            <select className="border-1 border-black/20 dark:border-white/50 p-4 rounded-xl">
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+            </select>
+            <button className="w-1/2 p-5 bg-[#826A45] text-white rounded-xl">Book A Table</button>
+          </div>
+
+        </div>
+        {/* Popular Category Card */}
+        <div className="w-[65%] flex-1 p-25 pb-0">
+          <div className="w-full h-full">
+            <h1 className="font-serif text-5xl">Our Popular category</h1>
+            <div className="flex flex-row h-full mt-8 justify-between">
+
+              <div className="w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop1})`}}>
+                <div className="items-end flex p-5 rounded-xl bg-gradient-to-t from-black via-black/20 to-transparent h-full w-full">
+                  <div>
+                    <h1 className="font-bold text-[#E7C28A]">Main Dishes</h1>
+                    <h1 className="font-bold text-xl text-white">Chicken Alfredo</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop2})`}}>
+                <div className="items-end flex p-5 rounded-xl bg-gradient-to-t from-black via-black/20 to-transparent h-full w-full">
+                  <div>
+                    <h1 className="font-bold text-[#E7C28A]">Deserts</h1>
+                    <h1 className="font-bold text-xl text-white">Cheesecake</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop3})`}}>
+                <div className="items-end flex p-5 rounded-xl bg-gradient-to-t from-black via-black/20 to-transparent h-full w-full">
+                  <div>
+                    <h1 className="font-bold text-[#E7C28A]">Sea Food</h1>
+                    <h1 className="font-bold text-xl text-white">Salmon Fry</h1>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 3nd Crad */}
+      <div className="w-full h-[90vh] p-25">
+          <div className="w-full h-full flex rounded-4xl">
+
+            <div className="w-1/3 h-full flex flex-col p-10 justify-center border-t-1 border-[#826A45] rounded-tr-4xl">
+              <img
+              src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=640&q=75"
+              className="w-25 h-fit"
+              ></img>
+              <h1 className="font-bold text-3xl mt-10">
+                Quality Foods
+              </h1>
+              <h2 className="mt-5 text-xl text-[#6B6B6B] dark:text-[#CCCCCC]">
+                Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
+              </h2>
+            </div>
+
+            <div className="w-1/3 h-full flex flex-col p-10 justify-center border-b-1 rounded-4xl border-[#826A45]">
+              <img
+              src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=640&q=75"
+              className="w-25 h-fit"
+              ></img>
+              <h1 className="font-bold text-3xl mt-10">
+                Fast Delivery
+              </h1>
+              <h2 className="mt-5 text-xl text-[#6B6B6B] dark:text-[#CCCCCC]">
+                Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
+              </h2>
+            </div>
+
+            <div className="w-1/3 h-full flex flex-col p-10 justify-center border-t-1 border-[#826A45] rounded-tl-4xl">
+              <img
+              src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=640&q=75"
+              className="w-25 h-fit"
+              ></img>
+              <h1 className="font-bold text-3xl mt-10">
+                Delicious Recipes
+              </h1>
+              <h2 className="mt-5 text-xl text-[#6B6B6B] dark:text-[#CCCCCC]">
+                Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
+              </h2>
+            </div>
+          </div>
+      </div>
+
+      {/* Special Offer Card // 3nd Crad */}
+      <div className="w-full h-fit px-28 ">
+        <div className="w-full h-full rounded-3xl flex bg-cover bg-center items-center" style={{backgroundImage: `url(${offerCard})`}}>
+
+          <div className="w-[45%] h-fit flex flex-row p-20 pr-0 items-center">
+            <div className="w-[40%] h-fit flex flex-col justify-center gap-10 items-center">
+              <img
+                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=1080&q=75"
+                className="w-full h-[50%]"
+              ></img>
+              <img
+                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F12.png&w=1080&q=75"
+                className="w-full h-[50%]"
+              ></img>
+            </div>
+            <img
+              src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F15.png&w=1080&q=75"
+              className="w-[60%] h-fit"
+            ></img>
+          </div>
+
+          <div className="w-[55%] h-fit flex flex-col p-20">
+            <h1 className="text-xl font-sans font-bold">
+              TODAY SPECIAL OFFER
+            </h1>
+            <h1 className="font-sans text-6xl font-bold mt-5">
+              Explore Irresistible Promotions!
+            </h1>
+            <p className="mt-5 text-xl">Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary.
+            </p>
+            <button className="w-fit h-fit px-10 py-6 bg-[#826A45] text-ml font-bold rounded-full mt-5 text-white">
+              Order Today
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Menu Card // 4th Crad */}
+      <div className="w-full flex flex-col items-center p-10 mt-20">
+        <p className="text-xl text-[#826A45] font-bold font-serif">FOOD MENU</p>
+        <h1 className="text-5xl font-serif font-bold mt-3">Our Specials Menu</h1>
+
+        {/* First Row */}
+        <div className="flex flex-row w-full h-fit p-15 justify-between">
+          
+          <MenuCard
+            imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F7.jpg&w=1920&q=75"
+            rating="4.9(5.7K)"
+            name="Vanilla Cupcakes"
+            description="4 chicken legs | Chili sauce | Soft Drinks"
+            price="$34"
+          />
+
+          <MenuCard
+            imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F8.jpg&w=1920&q=75"
+            rating="4.2(3.1K)"
+            name="Chocolate brownie"
+            description="4 chicken legs | Chili sauce | Soft Drinks"
+            price="$18"
+          />
+
+          <MenuCard
+            imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F9.jpg&w=1920&q=75"
+            rating="4.8(6.7K)"
+            name="Croissants Sweet Rolls Muffin"
+            description="4 chicken legs | Chili sauce | Soft Drinks"
+            price="$12"
+          />
+
+        </div>
+        {/* second Row */}
+        <div className="flex flex-row w-full h-fit p-15 pt-0 justify-between">
+          
+          <MenuCard
+            imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F10.jpg&w=1920&q=75"
+            rating="5(3.5K)"
+            name="White Chocolate Cheesecake"
+            description="4 chicken legs | Chili sauce | Soft Drinks"
+            price="$22"
+          />
+
+          <MenuCard
+            imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F11.jpg&w=1920&q=75"
+            rating="4.6(5.7K)"
+            name="Lemon Meringue Pie"
+            description="4 chicken legs | Chili sauce | Soft Drinks"
+            price="$34"
+          />
+
+          <MenuCard
+            imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F12.jpg&w=1920&q=75"
+            rating="4.8(5.5K)"
+            name="Mixed Berry Mousse"
+            description="4 chicken legs | Chili sauce | Soft Drinks"
+            price="$36"
+          />
+
+        </div>
+
+      </div>
+
+      {/* 5th Crad */}
+      <div className="w-full h-fit px-30 text-white">
+        <div className="w-full h-full rounded-3xl flex bg-cover bg-center items-center bg-[#262525]">
+          <img
+          src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F16.png&w=2048&q=75"
+          className="w-[50%] h-fit p-20"
+          ></img>
+          <div className="w-[50%] h-fit flex flex-col p-10">
+            <h1 className="font-serif text-5xl font-bold">
+              Are you Ready to Start your online Order?
+            </h1>
+            <p className="mt-10 text-[#CCCCCC]">Bndulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now
+            </p>
+            <div className="space-x-4">
+              <button className="w-fit h-fit px-10 py-4 bg-white text-black font-bold rounded-full mt-5">
+                App Store
+              </button>
+              <button className="w-fit h-fit px-10 py-4 bg-[#826A45] font-bold rounded-full mt-5">
+                Play Store
+              </button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      {/* Restan card // 6th Crad */}
+      <div className="w-full h-fit flex flex-col p-30">
+        <h1 className="text-9xl font-bold font-serif text-black/5 dark:text-[#242424]">RESTAN</h1>
+        <div className="w-full h-full flex flex-row relative">
+          <div className="bg-amber-300 w-[60%] h-115 bg-cover bg-center" style={{backgroundImage: `url(${restan})`}}></div>
+          <div className="bg-white dark:bg-[#262525] shadow-2xl w-[50%] h-fit absolute bottom-30 right-0 z-10 p-20">
+            <h1 className="text-3xl font-bold">Opening Hours</h1>
+            <h1 className="mt-5 text-[#6D6D6D]">A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The Patio Time Bar opens in the center..</h1>
+            <h1 className="font-bold mt-10">Sunday to Tuesday: 10:00 - 09:00</h1>
+            <h1 className="font-bold mt-5">Wednesday to Thursday: 11:30 - 10:30</h1>
+            <h1 className="font-bold mt-5">Friday & Saturday: 10:30 - 12:00</h1>
+            <div className="flex flex-row items-center space-x-4">
+              <img
+              src="https://cdn-icons-png.flaticon.com/128/3178/3178167.png"
+              className="w-18 mt-5 bg-[#826A45] rounded-full p-2"
+              ></img>
+              <div>
+                <h1 className="text-[#666666]">Call Anytime</h1>
+                <h1 className="text-2xl font-bold">+964733-378901</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Chef Page // 7th Card */}
+      <div className="w-full h-fit bg-[#EBE9E6] dark:bg-[#262525] flex flex-col items-center px-50 py-20">
+        <p className="text-xl text-[#826A45] font-bold font-serif">MASTER CHEFS</p>
+        <h1 className="text-5xl font-serif font-bold mt-3">Meet Our Special Chefs</h1>
+
+        <div className="w-fit h-full flex flex-row gap-40 mt-10 mb-10">
+
+          {/* 1st Chef */}
+          <div className="w-full h-full flex flex-col items-center relative">
+            <div className="relative h-fit p-5 border-2 border-black dark:border-white rounded-full z-10">
+              <img
+                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F1.jpg&w=1920&q=75"
+                className="w-100 rounded-full"
+              />
+            </div>
+            {/* Overlapping name bar */}
+            <div className="bg-[#826A45] w-80 h-22 text-white flex justify-center items-center flex-col mt-[-100px] z-20">
+              <h1 className="text-2xl">Alexander Petllo</h1>
+              <h1 className="">ASSISTANT CHEF</h1>
+            </div>
+          </div>
+
+          {/* 2nd Chef */}
+          <div className="w-full h-full flex flex-col items-center relative">
+            <div className="relative h-fit p-5 border-2 border-black dark:border-white rounded-full z-10">
+              <img
+                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F2.jpg&w=1920&q=75"
+                className="w-100 rounded-full"
+              />
+            </div>
+            <div className="bg-[#826A45] w-80 h-22 text-white flex justify-center items-center flex-col mt-[-100px] z-20">
+              <h1 className="text-2xl">Mendia Juxef</h1>
+              <h1 className="">BURGER KING</h1>
+            </div>
+          </div>
+
+          {/* 3rd Chef */}
+          <div className="w-full h-full flex flex-col items-center relative">
+            <div className="relative h-fit p-5 border-2 border-black dark:border-white rounded-full z-10">
+              <img
+                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F3.jpg&w=1920&q=75"
+                className="w-100 rounded-full"
+              />
+            </div>
+            <div className="bg-[#826A45] w-80 h-22 text-white flex justify-center items-center flex-col mt-[-100px] z-20">
+              <h1 className="text-2xl">Petro William</h1>
+              <h1 className="">MAIN CHEF</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* News Page // 8th Card */}
+      <div className="w-full h-fit flex flex-col items-center p-30">
+        <p className="text-xl text-[#826A45] font-bold font-serif">NEWS & BLOG</p>
+        <h1 className="text-3xl font-serif font-bold mt-3">Our Latest News & Blog</h1>
+
+        <div className="w-full flex flex-row mt-15 justify-between">
+          
+          {/* First Blog Card */}
+          <div className="w-[48%] h-fit flex flex-col items-center relative">
+            <img
+              src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F1.jpg&w=1920&q=75"
+              className="w-full"
+            />
+            <div className="w-[90%] bg-white dark:bg-[#262525] shadow-2xl p-20 h-fit -mt-10 relative">
+              {/* Date box fixed position */}
+              <div className="absolute -top-10 right-10 w-20 h-20 bg-[#826A45] flex flex-col justify-center items-center text-white z-10">
+                <h1 className="text-3xl font-bold leading-none">24</h1>
+                <h1 className="text-sm">DEC</h1>
+              </div>
+              <h1 className="text-[#555] uppercase text-sm tracking-wide mb-3">By Md Sohag • Burger ,Food</h1>
+              <h1 className="text-3xl font-bold text-black dark:text-white leading-tight">
+                Picked up a Brussels burger Sprouts with ham
+              </h1>
+              <p className="text-ml text-[#826A45] font-bold mt-5 cursor-pointer">READ MORE</p>
+            </div>
+          </div>
+
+          {/* Second Blog Card */}
+          <div className="w-[48%] h-fit flex flex-col items-center relative">
+            <img
+              src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
+              className="w-full"
+            />
+            <div className="w-[90%] bg-white dark:bg-[#262525] shadow-2xl p-20 h-fit -mt-10 relative">
+              <div className="absolute -top-10 right-10 w-20 h-20 bg-[#826A45] flex flex-col justify-center items-center text-white z-10">
+                <h1 className="text-3xl font-bold leading-none">24</h1>
+                <h1 className="text-sm">DEC</h1>
+              </div>
+              <h1 className="text-[#555] uppercase text-sm tracking-wide mb-3">By Md Sohag • Burger ,Food</h1>
+              <h1 className="text-3xl font-bold text-black dark:text-white leading-tight">
+                This prefabricated passive house is highly sustainable
+              </h1>
+              <p className="text-ml text-[#826A45] font-bold mt-5 cursor-pointer">READ MORE</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Footer // 9th Card */}
+      <Footer />
+
+    </div>
+  );
+}
