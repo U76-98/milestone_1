@@ -46,7 +46,7 @@ export default function Home() {
     <div className="w-full h-full bg-[#FFFFFF] text-black dark:bg-[#1B1B1B] dark:text-white">
       {/* Above Nav Card */}
       {!navColor &&
-        <div className="w-full h-10 fixed border-b-1 border-white/50 flex flex-row items-center px-20 justify-between text-white text-xl">
+        <div className="w-full h-10 fixed border-b border-white/50 md:flex flex-row items-center px-20 justify-between text-white text-xl hidden">
           <div className="flex flex-row w-[30%] justify-around">
             <h1>Phone:+91XXXXXXXXXX</h1>
             <h1>Email:food@restan.com</h1>
@@ -58,10 +58,9 @@ export default function Home() {
       }
 
       {/* Nav Card */}
-      <div
-        className={`w-full h-auto flex flex-row justify-around items-center p-7 z-30 text-white fixed ${navColor ? "bg-[#383838] top-0 left-0 mt-0 " : "bg-transparent mt-10"}`}>
+      <div className={`w-screen h-auto flex flex-row justify-center md:justify-around items-center p-7 z-30 text-white fixed ${navColor ? "bg-[#383838] top-0 left-0 mt-0 " : "bg-transparent mt-10"}`}>
         {/* Left Nav Card */}
-        <div className="w-1/5 h-auto flex flex-row text-xl font-bold gap-5 justify-evenly items-center">
+        <div className="w-1/5 h-auto md:flex flex-row text-xl font-bold gap-5 justify-evenly items-center hidden">
           <button>Home</button>
           <button>Pages</button>
           <button>Menu</button>
@@ -73,7 +72,7 @@ export default function Home() {
         >
         </img>
         {/* Right Nav Card */}
-        <div className="w-1/5 h-auto flex flex-row text-xl font-bold gap-5 justify-evenly items-center">
+        <div className="w-1/5 h-auto md:flex flex-row text-xl font-bold gap-5 justify-evenly items-center hidden">
           <button>Blog</button>
           <button>Shop</button>
           <button>Contact Us</button>
@@ -81,15 +80,15 @@ export default function Home() {
       </div>
 
       {/* Intro Card */}
-      <div className="w-full h-[100vh] bg-cover bg-center text-white" style={{backgroundImage: `url(${mainImg})`}}>
+      <div className="w-screen h-screen bg-cover bg-center text-white" style={{backgroundImage: `url(${mainImg})`}}>
         <div className="bg-black/50 w-full h-full flex flex-col items-center justify-center pt-30">
-          <h1 className="text-8xl font-bold font-serif">
+          <h1 className="md:text-8xl text-4xl font-bold font-serif">
             Best Restaurant
           </h1>
           <div className="border-[#FFD8A3] border-2 w-40 h-40 rounded-full mt-7 flex justify-center items-center bg-[#FFD8A3]/40">
             <img
               src="https://cdn-icons-png.flaticon.com/128/14921/14921792.png"
-              className="w-auto h-18 ml-"
+              className="w-auto h-18"
             >
             </img>
           </div>
@@ -97,9 +96,9 @@ export default function Home() {
       </div>
 
       {/* Book a table Card // 2nd Crad */}
-      <div className="w-full h-fit flex flex-row pl-30">
+      <div className="w-screen h-fit flex flex-col md:flex-row md:pl-30 px-5">
         {/* Book a table Card */}
-        <div className="w-[35%] h-fit shadow-xl rounded-4xl mt-[-50px] z-10 bg-[#FFFFFF] dark:bg-[#262525] p-15">
+        <div className="md:w-[35%] w-full h-fit shadow-xl rounded-4xl md:mt-[-50px] mt-[80px] z-10 bg-[#FFFFFF] dark:bg-[#262525] p-15">
 
           <img
           src="https://cdn-icons-png.flaticon.com/128/857/857681.png"
@@ -128,12 +127,12 @@ export default function Home() {
 
         </div>
         {/* Popular Category Card */}
-        <div className="w-[65%] flex-1 p-25 pb-0">
+        <div className="md:w-[65%] md:flex md:p-25 p-10 pb-0 mt-10 md:mt-0">
           <div className="w-full h-full">
             <h1 className="font-serif text-5xl">Our Popular category</h1>
-            <div className="flex flex-row h-full mt-8 justify-between">
+            <div className="flex flex-col md:flex-row h-full mt-8 justify-between space-y-5">
 
-              <div className="w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop1})`}}>
+              <div className="md:w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop1})`}}>
                 <div className="items-end flex p-5 rounded-xl bg-gradient-to-t from-black via-black/20 to-transparent h-full w-full">
                   <div>
                     <h1 className="font-bold text-[#E7C28A]">Main Dishes</h1>
@@ -142,7 +141,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop2})`}}>
+              <div className="md:w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop2})`}}>
                 <div className="items-end flex p-5 rounded-xl bg-gradient-to-t from-black via-black/20 to-transparent h-full w-full">
                   <div>
                     <h1 className="font-bold text-[#E7C28A]">Deserts</h1>
@@ -151,7 +150,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop3})`}}>
+              <div className="md:w-[32%] h-70 bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${pop3})`}}>
                 <div className="items-end flex p-5 rounded-xl bg-gradient-to-t from-black via-black/20 to-transparent h-full w-full">
                   <div>
                     <h1 className="font-bold text-[#E7C28A]">Sea Food</h1>
@@ -167,10 +166,10 @@ export default function Home() {
       </div>
 
       {/* 3nd Crad */}
-      <div className="w-full h-[90vh] p-25">
-          <div className="w-full h-full flex rounded-4xl">
+      <div className="w-screen h-fit md:p-25 p-10 md:pt-0 mt-10">
+          <div className="w-full h-full flex flex-col md:flex-row rounded-4xl space-y-10">
 
-            <div className="w-1/3 h-full flex flex-col p-10 justify-center border-t-1 border-[#826A45] rounded-tr-4xl">
+            <div className="md:w-1/3 flex flex-col p-10 justify-center md:border-t md:border-0 border border-[#826A45] md:rounded-tr-4xl rounded-4xl">
               <img
               src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=640&q=75"
               className="w-25 h-fit"
@@ -183,7 +182,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="w-1/3 h-full flex flex-col p-10 justify-center border-b-1 rounded-4xl border-[#826A45]">
+            <div className="md:w-1/3 flex flex-col p-10 justify-center md:border-b md:border-0 border border-[#826A45] md:rounded-tr-4xl rounded-4xl">
               <img
               src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=640&q=75"
               className="w-25 h-fit"
@@ -196,7 +195,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="w-1/3 h-full flex flex-col p-10 justify-center border-t-1 border-[#826A45] rounded-tl-4xl">
+            <div className="md:w-1/3 flex flex-col p-10 justify-center md:border-t md:border-0 border border-[#826A45] md:rounded-tr-4xl rounded-4xl">
               <img
               src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=640&q=75"
               className="w-25 h-fit"
@@ -212,11 +211,11 @@ export default function Home() {
       </div>
 
       {/* Special Offer Card // 3nd Crad */}
-      <div className="w-full h-fit px-28 ">
-        <div className="w-full h-full rounded-3xl flex bg-cover bg-center items-center" style={{backgroundImage: `url(${offerCard})`}}>
+      <div className="w-full h-fit md:px-28 p-5">
+        <div className="w-full h-full rounded-3xl flex flex-col md:flex-row bg-cover bg-center items-center" style={{backgroundImage: `url(${offerCard})`}}>
 
-          <div className="w-[45%] h-fit flex flex-row p-20 pr-0 items-center">
-            <div className="w-[40%] h-fit flex flex-col justify-center gap-10 items-center">
+          <div className="md:w-[45%] h-fit flex md:flex-row p-10 md:p-20 md:pr-0 items-center justify-center">
+            <div className="w-[40%] h-fit md:flex flex-col justify-center gap-10 items-center hidden">
               <img
                 src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=1080&q=75"
                 className="w-full h-[50%]"
@@ -228,18 +227,18 @@ export default function Home() {
             </div>
             <img
               src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F15.png&w=1080&q=75"
-              className="w-[60%] h-fit"
+              className="md:w-[60%] h-fit"
             ></img>
           </div>
 
-          <div className="w-[55%] h-fit flex flex-col p-20">
+          <div className="md:w-[55%] h-fit flex flex-col items-center md:items-start md:p-20 p-5 pt-0 text-black">
             <h1 className="text-xl font-sans font-bold">
               TODAY SPECIAL OFFER
             </h1>
-            <h1 className="font-sans text-6xl font-bold mt-5">
+            <h1 className="font-sans text-3xl text-center md:text-start md:text-6xl font-bold mt-5">
               Explore Irresistible Promotions!
             </h1>
-            <p className="mt-5 text-xl">Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary.
+            <p className="mt-5 text-ml ">Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence northward as difficult preserved daughters. Continued at up to zealously necessary.
             </p>
             <button className="w-fit h-fit px-10 py-6 bg-[#826A45] text-ml font-bold rounded-full mt-5 text-white">
               Order Today

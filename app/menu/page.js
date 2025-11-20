@@ -35,7 +35,7 @@ export default function Menu(){
 
             {/* Above Nav Card */}
             {!navColor &&
-                <div className="w-full h-10 fixed border-b-1 border-white/50 flex flex-row items-center px-20 justify-between bg-[#826A45] text-white text-xl">
+                <div className="hidden md:flex w-full h-10 fixed border-b border-white/50 items-center px-20 justify-between bg-[#826A45] text-white text-xl">
                     <div className="flex flex-row w-[30%] justify-around gap-5">
                         <h1>Phone:+91XXXXXXXXXX</h1>
                         <h1>Email:food@restan.com</h1>
