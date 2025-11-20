@@ -3,6 +3,9 @@
 import React, { useEffect, useState } from "react";
 import MenuCard from "./Components/MenuCard";
 import Footer from "./Components/Footer";
+import Chef from "./Components/Chef";
+import OpeningHours from "./Components/OpeningHours";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -61,21 +64,21 @@ export default function Home() {
       <div className={`w-screen h-auto flex flex-row justify-center md:justify-around items-center p-7 z-30 text-white fixed ${navColor ? "bg-[#383838] top-0 left-0 mt-0 " : "bg-transparent mt-10"}`}>
         {/* Left Nav Card */}
         <div className="w-1/5 h-auto md:flex flex-row text-xl font-bold gap-5 justify-evenly items-center hidden">
-          <button>Home</button>
-          <button>Pages</button>
-          <button>Menu</button>
+          <Link href="/">Home</Link>
+          <Link href="/menu">Menu</Link>
+          <Link href="/aboutus">About Us</Link>
         </div>
         {/* Center Nav Card */}
         <img
         src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo-light.png&w=1920&q=75"
-        className="w-auto h-20"
+        className="w-auto md:h-20 h-10"
         >
         </img>
         {/* Right Nav Card */}
         <div className="w-1/5 h-auto md:flex flex-row text-xl font-bold gap-5 justify-evenly items-center hidden">
-          <button>Blog</button>
+          <Link href="/contactus">Contact Us</Link>
           <button>Shop</button>
-          <button>Contact Us</button>
+          <button>Blog</button>
         </div>
       </div>
 
@@ -248,12 +251,12 @@ export default function Home() {
       </div>
 
       {/* Menu Card // 4th Crad */}
-      <div className="w-full flex flex-col items-center p-10 mt-20">
+      <div className="w-full flex flex-col items-center p-5 md:p-10 mt-10 md:mt-20">
         <p className="text-xl text-[#826A45] font-bold font-serif">FOOD MENU</p>
-        <h1 className="text-5xl font-serif font-bold mt-3">Our Specials Menu</h1>
+        <h1 className="text-3xl md:text-5xl font-serif font-bold mt-3 text-center md:text-left">Our Specials Menu</h1>
 
         {/* First Row */}
-        <div className="flex flex-row w-full h-fit p-15 justify-between">
+        <div className="flex flex-col md:flex-row w-full h-fit p-0 md:p-15 justify-between gap-10 md:gap-0 items-center">
           
           <MenuCard
             imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F7.jpg&w=1920&q=75"
@@ -274,14 +277,14 @@ export default function Home() {
           <MenuCard
             imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F9.jpg&w=1920&q=75"
             rating="4.8(6.7K)"
-            name="Croissants Sweet Rolls Muffin"
+            name="Croissants Sweet Muffin"
             description="4 chicken legs | Chili sauce | Soft Drinks"
             price="$12"
           />
 
         </div>
         {/* second Row */}
-        <div className="flex flex-row w-full h-fit p-15 pt-0 justify-between">
+        <div className="flex flex-col md:flex-row w-full h-fit p-0 md:p-15 md:pt-0 justify-between gap-10 md:gap-0 items-center">
           
           <MenuCard
             imageUrl="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F10.jpg&w=1920&q=75"
@@ -312,23 +315,23 @@ export default function Home() {
       </div>
 
       {/* 5th Crad */}
-      <div className="w-full h-fit px-30 text-white">
-        <div className="w-full h-full rounded-3xl flex bg-cover bg-center items-center bg-[#262525]">
+      <div className="w-full h-fit px-5 md:px-30 text-white">
+        <div className="w-full h-full rounded-3xl flex flex-col md:flex-row bg-cover bg-center items-center bg-[#262525]">
           <img
           src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F16.png&w=2048&q=75"
-          className="w-[50%] h-fit p-20"
+          className="w-full md:w-[50%] h-fit p-5 md:p-20"
           ></img>
-          <div className="w-[50%] h-fit flex flex-col p-10">
-            <h1 className="font-serif text-5xl font-bold">
+          <div className="w-full md:w-[50%] h-fit flex flex-col p-5 md:p-10">
+            <h1 className="font-serif text-3xl md:text-5xl font-bold">
               Are you Ready to Start your online Order?
             </h1>
             <p className="mt-10 text-[#CCCCCC]">Bndulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now
             </p>
-            <div className="space-x-4">
-              <button className="w-fit h-fit px-10 py-4 bg-white text-black font-bold rounded-full mt-5">
+            <div className="space-x-4 flex flex-row">
+              <button className="w-fit h-fit px-6 md:px-10 py-4 bg-white text-black font-bold rounded-full mt-5">
                 App Store
               </button>
-              <button className="w-fit h-fit px-10 py-4 bg-[#826A45] font-bold rounded-full mt-5">
+              <button className="w-fit h-fit px-6 md:px-10 py-4 bg-[#826A45] font-bold rounded-full mt-5">
                 Play Store
               </button>
             </div>
@@ -338,104 +341,32 @@ export default function Home() {
       </div>
 
       {/* Restan card // 6th Crad */}
-      <div className="w-full h-fit flex flex-col p-30">
-        <h1 className="text-9xl font-bold font-serif text-black/5 dark:text-[#242424]">RESTAN</h1>
-        <div className="w-full h-full flex flex-row relative">
-          <div className="bg-amber-300 w-[60%] h-115 bg-cover bg-center" style={{backgroundImage: `url(${restan})`}}></div>
-          <div className="bg-white dark:bg-[#262525] shadow-2xl w-[50%] h-fit absolute bottom-30 right-0 z-10 p-20">
-            <h1 className="text-3xl font-bold">Opening Hours</h1>
-            <h1 className="mt-5 text-[#6D6D6D]">A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The Patio Time Bar opens in the center..</h1>
-            <h1 className="font-bold mt-10">Sunday to Tuesday: 10:00 - 09:00</h1>
-            <h1 className="font-bold mt-5">Wednesday to Thursday: 11:30 - 10:30</h1>
-            <h1 className="font-bold mt-5">Friday & Saturday: 10:30 - 12:00</h1>
-            <div className="flex flex-row items-center space-x-4">
-              <img
-              src="https://cdn-icons-png.flaticon.com/128/3178/3178167.png"
-              className="w-18 mt-5 bg-[#826A45] rounded-full p-2"
-              ></img>
-              <div>
-                <h1 className="text-[#666666]">Call Anytime</h1>
-                <h1 className="text-2xl font-bold">+964733-378901</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <OpeningHours/>
       
       {/* Chef Page // 7th Card */}
-      <div className="w-full h-fit bg-[#EBE9E6] dark:bg-[#262525] flex flex-col items-center px-50 py-20">
-        <p className="text-xl text-[#826A45] font-bold font-serif">MASTER CHEFS</p>
-        <h1 className="text-5xl font-serif font-bold mt-3">Meet Our Special Chefs</h1>
-
-        <div className="w-fit h-full flex flex-row gap-40 mt-10 mb-10">
-
-          {/* 1st Chef */}
-          <div className="w-full h-full flex flex-col items-center relative">
-            <div className="relative h-fit p-5 border-2 border-black dark:border-white rounded-full z-10">
-              <img
-                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F1.jpg&w=1920&q=75"
-                className="w-100 rounded-full"
-              />
-            </div>
-            {/* Overlapping name bar */}
-            <div className="bg-[#826A45] w-80 h-22 text-white flex justify-center items-center flex-col mt-[-100px] z-20">
-              <h1 className="text-2xl">Alexander Petllo</h1>
-              <h1 className="">ASSISTANT CHEF</h1>
-            </div>
-          </div>
-
-          {/* 2nd Chef */}
-          <div className="w-full h-full flex flex-col items-center relative">
-            <div className="relative h-fit p-5 border-2 border-black dark:border-white rounded-full z-10">
-              <img
-                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F2.jpg&w=1920&q=75"
-                className="w-100 rounded-full"
-              />
-            </div>
-            <div className="bg-[#826A45] w-80 h-22 text-white flex justify-center items-center flex-col mt-[-100px] z-20">
-              <h1 className="text-2xl">Mendia Juxef</h1>
-              <h1 className="">BURGER KING</h1>
-            </div>
-          </div>
-
-          {/* 3rd Chef */}
-          <div className="w-full h-full flex flex-col items-center relative">
-            <div className="relative h-fit p-5 border-2 border-black dark:border-white rounded-full z-10">
-              <img
-                src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F3.jpg&w=1920&q=75"
-                className="w-100 rounded-full"
-              />
-            </div>
-            <div className="bg-[#826A45] w-80 h-22 text-white flex justify-center items-center flex-col mt-[-100px] z-20">
-              <h1 className="text-2xl">Petro William</h1>
-              <h1 className="">MAIN CHEF</h1>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <Chef/>
 
       {/* News Page // 8th Card */}
-      <div className="w-full h-fit flex flex-col items-center p-30">
+      <div className="w-full h-fit flex flex-col items-center p-5 md:p-30">
         <p className="text-xl text-[#826A45] font-bold font-serif">NEWS & BLOG</p>
-        <h1 className="text-3xl font-serif font-bold mt-3">Our Latest News & Blog</h1>
+        <h1 className="text-3xl font-serif font-bold mt-3 text-center">Our Latest News & Blog</h1>
 
-        <div className="w-full flex flex-row mt-15 justify-between">
+        <div className="w-full flex flex-col md:flex-row mt-15 justify-between gap-10 md:gap-0">
           
           {/* First Blog Card */}
-          <div className="w-[48%] h-fit flex flex-col items-center relative">
+          <div className="w-full md:w-[48%] h-fit flex flex-col items-center relative">
             <img
               src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F1.jpg&w=1920&q=75"
               className="w-full"
             />
-            <div className="w-[90%] bg-white dark:bg-[#262525] shadow-2xl p-20 h-fit -mt-10 relative">
+            <div className="w-[90%] bg-white dark:bg-[#262525] shadow-2xl p-10 md:p-20 h-fit -mt-10 relative">
               {/* Date box fixed position */}
               <div className="absolute -top-10 right-10 w-20 h-20 bg-[#826A45] flex flex-col justify-center items-center text-white z-10">
                 <h1 className="text-3xl font-bold leading-none">24</h1>
                 <h1 className="text-sm">DEC</h1>
               </div>
               <h1 className="text-[#555] uppercase text-sm tracking-wide mb-3">By Md Sohag • Burger ,Food</h1>
-              <h1 className="text-3xl font-bold text-black dark:text-white leading-tight">
+              <h1 className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-tight">
                 Picked up a Brussels burger Sprouts with ham
               </h1>
               <p className="text-ml text-[#826A45] font-bold mt-5 cursor-pointer">READ MORE</p>
@@ -443,18 +374,18 @@ export default function Home() {
           </div>
 
           {/* Second Blog Card */}
-          <div className="w-[48%] h-fit flex flex-col items-center relative">
+          <div className="w-full md:w-[48%] h-fit flex flex-col items-center relative">
             <img
               src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
               className="w-full"
             />
-            <div className="w-[90%] bg-white dark:bg-[#262525] shadow-2xl p-20 h-fit -mt-10 relative">
+            <div className="w-[90%] bg-white dark:bg-[#262525] shadow-2xl p-10 md:p-20 h-fit -mt-10 relative">
               <div className="absolute -top-10 right-10 w-20 h-20 bg-[#826A45] flex flex-col justify-center items-center text-white z-10">
                 <h1 className="text-3xl font-bold leading-none">24</h1>
                 <h1 className="text-sm">DEC</h1>
               </div>
               <h1 className="text-[#555] uppercase text-sm tracking-wide mb-3">By Md Sohag • Burger ,Food</h1>
-              <h1 className="text-3xl font-bold text-black dark:text-white leading-tight">
+              <h1 className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-tight">
                 This prefabricated passive house is highly sustainable
               </h1>
               <p className="text-ml text-[#826A45] font-bold mt-5 cursor-pointer">READ MORE</p>

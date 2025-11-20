@@ -2,11 +2,11 @@ export default function Footer()
 {
     return(
     <div className="w-full h-fit flex flex-col items-center text-white">
-        <div className="w-full h-fit p-20 z-10">
-          <div className="w-full h-full p-10 bg-[#1B1B1B] dark:bg-[#2E2D2D] flex flex-row gap-10">
+        <div className="w-full h-fit p-5 md:p-20 z-10">
+          <div className="w-full h-full p-5 md:p-10 bg-[#1B1B1B] dark:bg-[#2E2D2D] flex flex-col md:flex-row gap-10">
             
             {/* About Us */}
-            <div className="w-[24%] flex flex-col p-5 border-r-1 border-[#C1CCCC]">
+            <div className="w-full md:w-[24%] flex flex-col p-0 md:p-5 border-b md:border-b-0 md:border-r border-[#C1CCCC] pb-10 md:pb-0">
               <h1 className="text-4xl font-bold">About Us</h1>
               <p className="mt-10 text-xl text-[#C1CCCC]">
                 Continued at zealously necessary is Surrounded sir motionless she end literature.
@@ -15,7 +15,7 @@ export default function Footer()
             </div>
             
             {/* Explore */}
-            <div className="w-[24%] h-full flex flex-col p-5">
+            <div className="w-full md:w-[24%] h-full flex flex-col p-0 md:p-5">
               <h1 className="text-4xl font-bold">Explore</h1>
               <div className="flex flex-col mt-10 gap-5 text-xl text-[#C1CCCC]">
                 <h2>Company Profile</h2>
@@ -28,7 +28,7 @@ export default function Footer()
             </div>
 
             {/* Contact Info */}
-            <div className="w-[24%] h-full flex flex-col p-5">
+            <div className="w-full md:w-[24%] h-full flex flex-col p-0 md:p-5">
               <h1 className="text-4xl font-bold">Contact Info</h1>
               <div className="flex flex-col mt-10 gap-5 text-xl text-[#C1CCCC]">
                 <h2>175 10th Street, Office 375<br />Berlin, De 21562</h2>
@@ -38,7 +38,7 @@ export default function Footer()
             </div>
 
             {/* Newsletter */}
-            <div className="w-[24%] h-full flex flex-col p-5">
+            <div className="w-full md:w-[24%] h-full flex flex-col p-0 md:p-5">
               <h1 className="text-4xl font-bold">Newsletter</h1>
               <div className="flex flex-col mt-10 gap-5 text-xl text-[#C1CCCC]">
                 <h2>
@@ -62,13 +62,13 @@ export default function Footer()
         </div>
 
         {/* Picture here >> */}
-        <div className="bg-[#262525] w-full h-full p-20 -mt-50">
-          <div className="flex flex-row justify-between mt-30 items-center">
+        <div className="bg-[#262525] w-full h-full p-5 md:p-20 md:-mt-50">
+          <div className="flex flex-col md:flex-row justify-between mt-0 md:mt-30 items-center gap-5 md:gap-0">
             <img
               src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo-light.png&w=1920&q=75"
               className="w-30"
             />
-            <h1>© Copyright 2025. Restan. All Rights Reserved</h1>
+            <h1 className="text-center md:text-right">© Copyright 2025. Restan. All Rights Reserved</h1>
           </div>
         </div>
     </div>
