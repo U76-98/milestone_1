@@ -18,14 +18,6 @@ export default function Home() {
   {/* Special Offer card */}
   const offerCard = "https://restan-nextjs.vercel.app/assets/img/shape/4.jpg";
 
-  {/* Restan card */}
-  const restan = "https://img.youtube.com/vi/F3zw1Gvn4Mk/maxresdefault.jpg";
-
-    {/* Chef card */}
-  const C1 = "https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F1.jpg&w=1920&q=75";
-  const C2 = "https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F2.jpg&w=1920&q=75";
-  const C3 = "https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F3.jpg&w=1920&q=75";
-
   {/*NAV BAR LOGIC */}
   const [navColor, setNavColor] = useState(false);
 

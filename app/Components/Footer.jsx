@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+
 export default function Footer()
 {
     return(
@@ -18,10 +21,10 @@ export default function Footer()
             <div className="w-full md:w-[24%] h-full flex flex-col p-0 md:p-5">
               <h1 className="text-4xl font-bold">Explore</h1>
               <div className="flex flex-col mt-10 gap-5 text-xl text-[#C1CCCC]">
-                <h2>Company Profile</h2>
-                <h2>About</h2>
-                <h2>Help Center</h2>
-                <h2>Career</h2>
+                <Link href="/">Home</Link>
+                <Link href="/menu">Menu</Link>
+                <Link href="/aboutus">About Us</Link>
+                <Link href="/contactus">Contact Us</Link>
                 <h2>Features</h2>
                 <h2>Contact</h2>
               </div>
