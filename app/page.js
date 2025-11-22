@@ -8,6 +8,7 @@ import OpeningHours from "./Components/OpeningHours";
 import Link from "next/link";
 
 
+
 export default function Home() {
   const mainImg ="https://restan-nextjs.vercel.app/assets/img/banner/14.jpg";
   {/* Popular Category card */}
@@ -20,6 +21,7 @@ export default function Home() {
 
   {/*NAV BAR LOGIC */}
   const [navColor, setNavColor] = useState(false);
+  const [menuOpen, setMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +55,7 @@ export default function Home() {
       }
 
       {/* Nav Card */}
-      <div className={`w-screen h-auto flex flex-row justify-center md:justify-around items-center p-7 z-30 text-white fixed ${navColor ? "bg-[#383838] top-0 left-0 mt-0 " : "bg-transparent mt-10"}`}>
+      <div className={`w-screen h-auto flex flex-row justify-around items-center py-7 md:p-7 z-30 text-white fixed ${navColor ? "bg-[#383838] top-0 left-0 mt-0 " : "bg-transparent mt-10"}`}>
         {/* Left Nav Card */}
         <div className="w-1/5 h-auto md:flex flex-row text-xl font-bold gap-5 justify-evenly items-center hidden">
           <Link href="/">Home</Link>
@@ -72,7 +74,26 @@ export default function Home() {
           <button>Shop</button>
           <button>Blog</button>
         </div>
+
+        {/* Hamburg Menu */}
+        <div className="md:hidden">
+          <button onClick={() => setMenu(!menuOpen)}>
+            <img
+            src="https://cdn-icons-png.flaticon.com/128/8727/8727897.png"
+            className="w-auto h-10"
+            ></img>
+          </button>
+        </div>
       </div>
+
+        
+      {menuOpen && (
+        <div className="w-full h-fit flex flex-col mt-25 text-2xl space-y-2 font-bold items-center z-50 mt-3 fixed bg-[#383838] rounded-b-2xl py-5">
+                  <Link href="/">Home</Link>
+                  <Link href="/menu">Menu</Link>
+                  <Link href="/aboutus">About Us</Link>
+                  <Link href="/contactus">Contact Us</Link>
+        </div>)}
 
       {/* Intro Card */}
       <div className="w-screen h-screen bg-cover bg-center text-white" style={{backgroundImage: `url(${mainImg})`}}>

@@ -39,12 +39,8 @@ export default function Navbar() {
 
       {/* Nav Card */}
       <div
-        className={`w-full h-auto flex flex-row justify-between md:justify-around items-center p-5 md:p-7 z-40 fixed ${
-          navColor
-            ? "bg-[#FFFFFF] dark:bg-black/60 dark:backdrop-blur-md dark:text-white top-0 left-0 mt-0 text-black"
-            : "bg-transparent mt-0 md:mt-10 text-white"
-        } border-b-2 border-[#1E1E1E]`}
-      >
+        className={`w-full h-auto flex flex-row justify-between md:justify-around items-center p-5 md:p-7 z-40 fixed ${navColor ? "bg-[#FFFFFF] dark:bg-black/60 dark:backdrop-blur-md dark:text-white top-0 left-0 mt-0 text-black" : "bg-transparent mt-0 md:mt-10 text-white"} border-b-2 border-[#1E1E1E]`}>
+
         {/* left Nav Card */}
         <img
           src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo-light.png&w=1920&q=75"
@@ -93,7 +89,7 @@ export default function Navbar() {
 
       {/* Menu \\ Below Nav Card */}
       {menuOpen && (
-        <div className="w-full h-fit flex flex-col mt-25 text-2xl space-y-2 font-bold items-center">
+        <div className={`w-full h-fit flex flex-col mt-20 text-2xl space-y-2 font-bold items-center fixed bg-[#FFFFFF] dark:bg-black/60 dark:backdrop-blur-md dark:text-white top-0 left-0 text-black z-50 rounded-b-2xl`}>
                 <Link href="/">Home</Link>
                 <Link href="/menu">Menu</Link>
                 <Link href="/aboutus">About Us</Link>
