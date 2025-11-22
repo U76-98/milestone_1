@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [navColor, setNavColor] = useState(false);
+  const [menuOpen, setMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +50,17 @@ export default function Navbar() {
           src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo-light.png&w=1920&q=75"
           className={`w-auto h-12 md:h-20 ${navColor ? "invert dark:invert-0" : ""}`}
         />
+
+        {/* Hamburg Menu */}
+        <div className="md:hidden">
+          <button onClick={() => setMenu(!menuOpen)}>
+            <img
+            src="https://cdn-icons-png.flaticon.com/128/8727/8727897.png"
+            className="w-auto h-10"
+            ></img>
+          </button>
+        </div>
+
         {/* mid Nav Card */}
         <div className="w-auto h-auto hidden md:flex flex-row text-xl font-bold gap-10 justify-evenly items-center">
           <Link href="/">Home</Link>
@@ -78,6 +90,15 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Menu \\ Below Nav Card */}
+      {menuOpen && (
+        <div className="w-full h-fit flex flex-col mt-25 text-2xl space-y-2 font-bold items-center">
+                <Link href="/">Home</Link>
+                <Link href="/menu">Menu</Link>
+                <Link href="/aboutus">About Us</Link>
+                <Link href="/contactus">Contact Us</Link>
+      </div>)}
     </>
   );
 }

@@ -30,9 +30,9 @@ export default function ContactUs() {
             {/* Hotline Card */}
             <div className="w-full md:w-[30%] h-60 md:h-[60%] border border-gray-200 rounded-2xl flex flex-col justify-center items-center shadow-md">
                 <img
-                src="https://cdn-icons-png.flaticon.com/128/597/597177.png"
+                src="https://cdn-icons-png.flaticon.com/128/3014/3014736.png"
                 alt="phone"
-                className="w-16 h-16 mb-5"
+                className="w-16 h-16 mb-5 invert"
                 />
                 <h1 className="text-2xl font-bold mb-2">Hotline</h1>
                 <p className="text-lg dark:text-white/50">+4733378901</p>
@@ -41,7 +41,7 @@ export default function ContactUs() {
             {/* Location Card */}
             <div className="w-full md:w-[30%] h-60 md:h-[60%] border border-gray-200 rounded-2xl flex flex-col justify-center items-center shadow-md">
                 <img
-                src="https://cdn-icons-png.flaticon.com/128/854/854878.png"
+                src="https://cdn-icons-png.flaticon.com/128/684/684908.png"
                 alt="location"
                 className="w-16 h-16 mb-5"
                 />
