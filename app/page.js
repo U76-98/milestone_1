@@ -87,7 +87,7 @@ export default function Home() {
       </div>
 
       {/* Menu \\ Below Nav Card */}
-      <div className="fixed w-full px-10 z-50">
+      <div className="fixed w-full px-10 z-20">
         {menuOpen && (
           <div className="w-full h-fit flex flex-col mt-35 text-2xl space-y-2 font-bold items-center bg-black/60 backdrop-blur-md rounded-2xl py-5 text-white">
                     <Link href="/">Home</Link>
