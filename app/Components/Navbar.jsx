@@ -88,13 +88,15 @@ export default function Navbar() {
       </div>
 
       {/* Menu \\ Below Nav Card */}
-      {menuOpen && (
-        <div className={`w-full h-fit flex flex-col mt-20 text-2xl space-y-2 font-bold items-center fixed bg-[#FFFFFF] dark:bg-black/60 dark:backdrop-blur-md dark:text-white top-0 left-0 text-black z-50 rounded-b-2xl`}>
-                <Link href="/">Home</Link>
-                <Link href="/menu">Menu</Link>
-                <Link href="/aboutus">About Us</Link>
-                <Link href="/contactus">Contact Us</Link>
-      </div>)}
+      <div className="fixed w-full px-10 z-50">
+        {menuOpen && (
+          <div className="w-full h-fit flex flex-col mt-35 text-2xl space-y-2 font-bold items-center z-50 bg-black/60 backdrop-blur-md rounded-2xl py-5 text-white">
+                    <Link href="/">Home</Link>
+                    <Link href="/menu">Menu</Link>
+                    <Link href="/aboutus">About Us</Link>
+                    <Link href="/contactus">Contact Us</Link>
+        </div>)}
+      </div>
     </>
   );
 }

@@ -86,14 +86,17 @@ export default function Home() {
         </div>
       </div>
 
-        
-      {menuOpen && (
-        <div className="w-full h-fit flex flex-col mt-25 text-2xl space-y-2 font-bold items-center z-50 mt-3 fixed bg-[#383838] rounded-b-2xl py-5">
-                  <Link href="/">Home</Link>
-                  <Link href="/menu">Menu</Link>
-                  <Link href="/aboutus">About Us</Link>
-                  <Link href="/contactus">Contact Us</Link>
+      {/* Menu \\ Below Nav Card */}
+      <div className="fixed w-full px-10 z-50">
+        {menuOpen && (
+          <div className="w-full h-fit flex flex-col mt-35 text-2xl space-y-2 font-bold items-center bg-black/60 backdrop-blur-md rounded-2xl py-5 text-white">
+                    <Link href="/">Home</Link>
+                    <Link href="/menu">Menu</Link>
+                    <Link href="/aboutus">About Us</Link>
+                    <Link href="/contactus">Contact Us</Link>
         </div>)}
+      </div>
+
 
       {/* Intro Card */}
       <div className="w-screen h-screen bg-cover bg-center text-white" style={{backgroundImage: `url(${mainImg})`}}>
